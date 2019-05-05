@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
   name: myapp-replicaset
   labels:
@@ -16,14 +16,24 @@ spec:
       containers:
         - name: nginx-image
           image: nginx
-  replicas: 6
+
+  replicas: 3
+
   selector:
     matchLabels:
-      type: front-end
+      app: myapp
 
-# kubectl create -f replicaset-definition.yml
+# kubectl create -f deployment-definition.yml
+# kubectl get deployments
 # kubectl get replicaset
 # kubectl get pods
+# kubectl get all
+
+
+
+
+# kubectl create -f replicaset-definition.yml
+# kubectl describe replicaset
 
 # update file then run:
 # kubectl replace -f replicaset-definition.yml
@@ -32,4 +42,8 @@ spec:
 #?? kubectl scale --replicas=2 replicaset-definition.yml
 # kubectl scale --replicas=2 replicaset myapp-replicaset
 
+# kubectl delete pod myapp-replicaset-4tc2t
+
+
 # kubectl delete replicaset myapp-replicaset
+

@@ -19,5 +19,6 @@ spec:
   replicas: 3
 
 
-  # kubectl create -f rc-definition.yml
-  # kubectl get replicationcontroller
+# kubectl create -f rc-definition.yml
+# kubectl get replicationcontroller
+# kubectl delete replicationcontroller myapp-rc
