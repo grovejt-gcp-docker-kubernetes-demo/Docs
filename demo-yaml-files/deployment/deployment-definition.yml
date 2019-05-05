@@ -30,21 +30,18 @@ spec:
 # kubectl get all
 # kubectl describe deployment
 
+# kubectl rollout status deployment-definition.yml
+# kubectl rollout history deployment-definition.yml
+
+## todo ---
+# to update - change version of a component (rolling update by default, Recreate is another strategy), then:
+# kubectl apply -f deployment-definition.yml
+# or for tranient update:
+# kubectl set image deployment/myapp-deployment nginx=nginx:1.9.1
+
+# to rollback
+# kubectl rollout undo deployment/myapp-deployment
 
 
-
-# kubectl create -f replicaset-definition.yml
-# kubectl describe replicaset
-
-# update file then run:
-# kubectl replace -f replicaset-definition.yml
-
-# or:
-#?? kubectl scale --replicas=2 replicaset-definition.yml
-# kubectl scale --replicas=2 replicaset myapp-replicaset
-
-# kubectl delete pod myapp-replicaset-4tc2t
-
-
-# kubectl delete replicaset myapp-replicaset
-
+# to deploy without a pod definition file (automatically creates a deployment:
+# kubectl run nginx --image=nginx
