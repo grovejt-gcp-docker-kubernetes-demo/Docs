@@ -45,3 +45,7 @@ spec:
 
 # to deploy without a pod definition file (automatically creates a deployment:
 # kubectl run nginx --image=nginx
+#
+# to delete a deployment:
+# kubectl delete deployment myapp-deployment
+#
