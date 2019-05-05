@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapp-replicaset
+  name: myapp-deployment
   labels:
     app: myapp
     type: front-end
@@ -14,7 +14,7 @@ spec:
         type: front-end
     spec:
       containers:
-        - name: nginx-image
+        - name: nginx-container
           image: nginx
 
   replicas: 3
@@ -28,6 +28,7 @@ spec:
 # kubectl get replicaset
 # kubectl get pods
 # kubectl get all
+# kubectl describe deployment
 
 
 
